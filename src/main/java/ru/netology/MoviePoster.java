@@ -2,19 +2,17 @@ package ru.netology;
 
 import ru.netology.Movie;
 
-public class MovieManager {
+public class MoviePoster {
 
     private Movie[] movies = new Movie[0];
-    private int defaultMovieLength = 10;
+    private int maxNumberOfMovies = 10;
 
-    public MovieManager() {
-
+    public MoviePoster() {
     }
 
-
-    public MovieManager(int userLength) {
+    public MoviePoster(int userLength) {
         if (userLength > 0) {
-            defaultMovieLength = userLength;
+            maxNumberOfMovies = userLength;
         }
 
     }
@@ -31,7 +29,7 @@ public class MovieManager {
 
     public Movie[] getLastAdd() {
         int moviesLength = movies.length;
-        int localMovieLength = defaultMovieLength;
+        int localMovieLength = maxNumberOfMovies;
         if (moviesLength < localMovieLength) {
             localMovieLength = moviesLength;
         }
@@ -43,5 +41,6 @@ public class MovieManager {
         }
         return result;
     }
+
 
 }
